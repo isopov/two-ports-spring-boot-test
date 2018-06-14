@@ -1,2 +1,15 @@
 server:
   port: 8080
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: bd1c0a783ccdd1c9b9e4
+            client-secret: 1a9030fbca47a5b2c28e92f19050bb77824b5ad1
+            client-name: Github user
+            provider: github
+            scope: user
+            redirect-uri-template: http://localhost:8080/login/oauth2/code/github
