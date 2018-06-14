@@ -1,8 +1,8 @@
 package com.example.parenttest.internal;
 
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import com.example.parenttest.ChildContext;
 
-@SpringBootApplication
+@ChildContext
 public class InternalModule {
     public static final String INTERNAL_PROFILE = "internal";
 }

@@ -1,7 +1,5 @@
-package com.example.parenttest;
+package com.example.parenttest.internal;
 
-import com.example.parenttest.external.ExternalModule;
-import com.example.parenttest.internal.InternalModule;
 import com.example.parenttest.parent.ParentModule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,6 +13,7 @@ import org.springframework.test.context.ContextHierarchy;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -34,15 +33,15 @@ public class InternalTests {
 
 	@Test
 	public void testAccessInternal() throws Exception {
-		mockMvc.perform(get("/internal"))
+		mockMvc.perform(get("/foobar"))
 				.andExpect(status().isOk())
-				.andExpect(content().string("Hello World!"));
+				.andExpect(content().string("[]"));
 	}
 
 	@Test
 	public void testNoAccessInternal() throws Exception {
-		mockMvc.perform(get("/external"))
-				.andExpect(status().isNotFound());
+		mockMvc.perform(delete("/foobar"))
+				.andExpect(status().isOk());
 	}
 
 

@@ -1,8 +1,8 @@
 package com.example.parenttest.external;
 
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import com.example.parenttest.ChildContext;
 
-@SpringBootApplication
+@ChildContext
 public class ExternalModule {
     public static final String EXTERNAL_PROFILE = "external";
 }

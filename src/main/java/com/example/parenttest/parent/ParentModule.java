@@ -1,11 +1,9 @@
 package com.example.parenttest.parent;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration;
 
-@Configuration
-@ComponentScan
+@SpringBootApplication(exclude = EmbeddedWebServerFactoryCustomizerAutoConfiguration.class)
 public class ParentModule {
     public static final String PARENT_PROFILE = "parent";
 }
