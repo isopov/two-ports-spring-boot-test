@@ -118,7 +118,9 @@
 	</build>
 
 	<!-- TODO springfox 2.9.0 is available only in jcenter
-			remove when updating to 2.9.1 that should be in maven central-->
+			remove when updating to 2.9.1 that should be in maven central
+			https://github.com/springfox/springfox/issues/2381
+			-->
 	<repositories>
 		<repository>
 			<snapshots>
