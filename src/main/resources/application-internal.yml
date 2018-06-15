@@ -4,3 +4,7 @@ server:
 management:
   server:
     port: 9091
+  endpoints:
+    web:
+      exposure:
+        include: "*"

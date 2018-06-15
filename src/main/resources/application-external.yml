@@ -3,7 +3,7 @@ server:
 
 management:
   server:
-    port: 9081
+    port: -1
 
 spring:
   security:
