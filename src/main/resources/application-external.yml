@@ -1,5 +1,9 @@
 server:
-  port: 8080
+  port: 9080
+
+management:
+  server:
+    port: 9081
 
 spring:
   security:
@@ -7,9 +11,8 @@ spring:
       client:
         registration:
           github:
-            client-id: bd1c0a783ccdd1c9b9e4
-            client-secret: 1a9030fbca47a5b2c28e92f19050bb77824b5ad1
+            client-id: ${GITHUB_CLIENT_ID}
+            client-secret: ${GITHUB_CLIENT_SECRET}
             client-name: Github user
             provider: github
             scope: user
-            redirect-uri-template: http://localhost:8080/login/oauth2/code/github

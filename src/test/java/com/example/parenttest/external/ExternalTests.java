@@ -11,6 +11,7 @@ import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.ContextHierarchy;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -27,6 +28,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 })
 @ActiveProfiles({ParentModule.PARENT_PROFILE, ExternalModule.EXTERNAL_PROFILE})
 @RunWith(SpringRunner.class)
+@TestPropertySource(properties = "management.server.port=0")
 @WithMockUser
 public class ExternalTests {
 

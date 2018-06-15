@@ -10,6 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.ContextHierarchy;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -25,6 +26,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 		@ContextConfiguration(classes = InternalModule.class)
 })
 @ActiveProfiles({ParentModule.PARENT_PROFILE, InternalModule.INTERNAL_PROFILE})
+@TestPropertySource(properties = "management.server.port=0")
 @RunWith(SpringRunner.class)
 public class InternalTests {
 

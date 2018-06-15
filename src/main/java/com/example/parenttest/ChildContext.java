@@ -1,5 +1,6 @@
 package com.example.parenttest;
 
+import org.springframework.boot.actuate.autoconfigure.web.server.ManagementContextAutoConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.ImportAutoConfiguration;
 import org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration;
@@ -16,6 +17,9 @@ import java.lang.annotation.*;
 @EnableSwagger2
 @ComponentScan
 @EnableAutoConfiguration
-@ImportAutoConfiguration(EmbeddedWebServerFactoryCustomizerAutoConfiguration.class)
+@ImportAutoConfiguration({
+        EmbeddedWebServerFactoryCustomizerAutoConfiguration.class,
+        ManagementContextAutoConfiguration.class
+})
 public @interface ChildContext {
 }
